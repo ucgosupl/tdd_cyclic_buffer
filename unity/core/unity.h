@@ -14,7 +14,7 @@ extern "C"
 {
 #endif
 
-#include "../../unity/core/unity_internals.h"
+#include "unity_internals.h"
 
 void setUp(void);
 void tearDown(void);
