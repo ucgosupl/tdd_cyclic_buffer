@@ -23,8 +23,18 @@ TEST(cyclic_buffer, BufferEmptyAfterInit)
     TEST_ASSERT_TRUE(cbuf_is_empty(&buffer));
 }
 
-//after init buffer is empty
-//after pushing single item, the same item is returned
+TEST(cyclic_buffer, AfterPushingItemTheSameIsReturned)
+{
+    struct cbuf buffer;
+    uint32_t item = 0x55AA00FF;
+
+    cbuf_init(&buffer);
+
+    cbuf_push(&buffer, item);
+
+    TEST_ASSERT_EQUAL_HEX32(item, cbuf_pop(&buffer));
+}
+
 //after adding 2 items, they are returned in the same order
 //when max capacity is reached, first item is overriden
 //number of items in the buffer is returned by function
