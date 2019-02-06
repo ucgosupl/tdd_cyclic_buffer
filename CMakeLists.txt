@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.10)
 
 project(tdd_cyclic_buffer)
 
+set(CMAKE_C_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+
 set(INCLUDE_DIRS
 	src
 )
@@ -12,7 +14,7 @@ set(TEST_INCLUDE_DIRS
 )
 
 set(SRCS
-
+	src/cyclic_buffer/cyclic_buffer.c
 )
 
 set(TEST_SRCS
